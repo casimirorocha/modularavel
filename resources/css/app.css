@@ -1,0 +1,5 @@
+@import "unpoly/unpoly.min.css";
+@import "unpoly/unpoly-bootstrap5.min.css";
+/*@tailwind base;*/
+/*@tailwind components;*/
+@tailwind utilities;
