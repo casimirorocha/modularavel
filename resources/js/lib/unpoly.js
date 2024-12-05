@@ -1,5 +1,6 @@
 import 'unpoly/unpoly.min.js'
 import 'unpoly/unpoly-bootstrap5.min.js'
+import _hyperscript from 'hyperscript.org';
 import { toArray } from './utils/toArray';
 
 /**
@@ -12,15 +13,11 @@ import { toArray } from './utils/toArray';
 document.addEventListener("DOMContentLoaded", () => {
     const env = import.meta.env
 
-    document.getElementsByTagName('input').onfocus=function(){
-        this.value ='';
-        this.style.border = '';
-        this.style.backgroundColor = '#000000';
-    }
+    _hyperscript.browserInit();
 
-    up.fragment.config.mainTargets.push('section')
+    // up.fragment.config.mainTargets.push('section')
 
-    /*up.on('focus', function(event) {
+    up.on('keyup click', function(event) {
         const target = event.target
         if (target.nodeName === 'INPUT') {
             if (target.classList.contains('is-invalid')) {
@@ -31,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 target.offsetParent.classList.remove('is-invalid')
             }
         }
-    })*/
+    })
 
     /**
      * Following all links
@@ -76,6 +73,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (confirm('You are offline. Retry?')) event.retry()
         // up.render(event.renderOptions.target, { content: "You are offline." })
     })
+
+    /**
+     * Handling network issues
+     *
+     * https://unpoly.com/network-issues#disconnects
+     */
+    up.on('up:fragment:inserted', function(event) {
+        setTimeout(() => {
+            _hyperscript.browserInit();
+        }, 50)
+    })
+
 
     /**
      * The following would disable preloading on slow 2G connections:

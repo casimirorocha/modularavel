@@ -1,0 +1,30 @@
+{
+    "name": "casimirorocha/blog",
+    "description": "",
+    "authors": [
+        {
+            "name": "Casimiro Rocha",
+            "email": "casimiroaf@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Blog\\": "src/",
+            "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+            "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Blog\\Tests\\": "tests/"
+        }
+    }
+}
