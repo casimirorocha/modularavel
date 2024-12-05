@@ -1,5 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -11,6 +13,9 @@ export default {
 
     theme: {
         extend: {
+            colors: {
+                gray: colors.slate,
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

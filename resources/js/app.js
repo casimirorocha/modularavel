@@ -1,4 +1,4 @@
 import './lib/unpoly';
 import './bootstrap';
-// import './lib/alpine';
+import './lib/alpine';
 

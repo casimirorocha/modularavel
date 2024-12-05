@@ -16,7 +16,9 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "alpinejs": "^3.14.6",
         "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
         "hyperscript.org": "^0.9.12",
         "unpoly": "^3.9.3"
     }

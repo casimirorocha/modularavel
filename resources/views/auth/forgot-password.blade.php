@@ -10,24 +10,23 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email"
-                              class="block mt-1 w-full is-invalid"
-                              type="email"
-                              name="email"
-                              :value="old('email')"
-                              required
-                              autofocus
-                              _='on click remove .is-invalid on me'
-                />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
+            <x-modularavel::input
+                autofocus=""
+                name="email"
+                type="email"
+                value="email"
+                :label="__('E-mail')"
+                icon="envelope-fill"
+            />
 
             <div class="flex items-center justify-end mt-4">
-                <x-primary-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-primary-button>
+                <x-modularavel::btn
+                    type="submit"
+                    class="ml-5 shadow"
+                    :label="__('Email Password Reset Link')"
+                    icon-right="box-arrow-in-right"
+                    size="md"
+                />
             </div>
         </form>
 </x-guest-layout>

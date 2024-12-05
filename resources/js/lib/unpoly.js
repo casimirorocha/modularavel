@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     _hyperscript.browserInit();
 
-    // up.fragment.config.mainTargets.push('section')
+    // up.fragment.config.mainTargets.push(['section', 'header'])
 
-    up.on('keyup click', function(event) {
+    up.on('click', function(event) {
         const target = event.target
         if (target.nodeName === 'INPUT') {
             if (target.classList.contains('is-invalid')) {
@@ -109,4 +109,20 @@ document.addEventListener("DOMContentLoaded", () => {
      * up.log.enable() || up.log.disable()
      */
     up.log.config.enabled = JSON.parse(env.VITE_UP_CONFIG_LOG_ENABLE)
+
+  /*  function isStylesheet(asset) {
+        return asset.matches('link[rel=stylesheet]')
+    }
+
+    up.on('up:assets:changed', function({ oldAssets, newAssets }) {
+        let oldStylesheets = up.util.filter(oldAssets, isStylesheet)
+        for (let oldStylesheet of oldStylesheets) {
+            oldStylesheet.remove()
+        }
+
+        let newStylesheets = up.util.filter(newAssets, isStylesheet)
+        for (let newStylesheet of newStylesheets) {
+            document.head.append(newStylesheet)
+        }
+    })*/
 });

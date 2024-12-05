@@ -17,8 +17,8 @@
 
     <!-- Default scripts -->
     @vite([
-        'resources/css/app.css',
         'resources/sass/bootstrap5.scss',
+        'resources/css/app.css',
         'resources/js/app.js'
     ])
 
@@ -33,7 +33,7 @@
     </div>
 
     <div class="w-10/12 sm:max-w-md">
-            <div class="card bg-body-tertiary px-0 py-2 shadow">
+            <div class="card bg-body-secondary px-0 py-2 shadow">
                 <div class="card-body">
                     <main>
                         @stack('assets')
