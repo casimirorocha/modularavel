@@ -1,5 +1,5 @@
 import 'unpoly/unpoly.min.js'
-import 'unpoly/unpoly-bootstrap5.min.js'
+//import 'unpoly/unpoly-bootstrap5.min.js'
 import _hyperscript from 'hyperscript.org';
 import { toArray } from './utils/toArray';
 
@@ -13,9 +13,9 @@ import { toArray } from './utils/toArray';
 document.addEventListener("DOMContentLoaded", () => {
     const env = import.meta.env
 
-    _hyperscript.browserInit();
+     _hyperscript.browserInit();
 
-    // up.fragment.config.mainTargets.push(['section', 'header'])
+    up.fragment.config.mainTargets.push(['main', 'body', 'head', 'header'])
 
     up.on('click', function(event) {
         const target = event.target
@@ -54,15 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     up.form.config.submitSelectors.push(toArray(env.VITE_UP_CONFIG_FORM_SUBMIT_SELECTORS))
 
-    const linkClosestFormLayer = env.VITE_UP_CONFIG_LINK_CLOSEST_FORM_LAYER
+   // const linkClosestFormLayer = env.VITE_UP_CONFIG_LINK_CLOSEST_FORM_LAYER
 
-    if (['new modal', 'swap modal', 'new', 'swap', 'shatter'].includes(linkClosestFormLayer)) {
+/*    if (['new modal', 'swap modal', 'new', 'swap', 'shatter'].includes(linkClosestFormLayer)) {
         up.on('up:link:follow up:link:preload', function(event, link) {
             if (link.closest('form')) {
                 event.renderOptions.layer = linkClosestFormLayer
             }
         })
-    }
+    }*/
 
     /**
      * Handling network issues
@@ -79,11 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
      *
      * https://unpoly.com/network-issues#disconnects
      */
-    up.on('up:fragment:inserted', function(event) {
+ /*   up.on('up:fragment:inserted', function(event) {
         setTimeout(() => {
             _hyperscript.browserInit();
         }, 50)
-    })
+    })*/
 
 
     /**

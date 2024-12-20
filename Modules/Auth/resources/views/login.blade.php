@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <!-- Login Form -->
     <form class="grid grid-cols-1 gap-4"
           method="POST"
           action="{{ route('login') }}"
@@ -6,10 +7,12 @@
           up-fail-target="form"
           up-scroll="auto"
           up-fail-scroll="form"
-          up-target="body:maybe,head:maybe"
+          up-target="form"
     >
+        <!-- CSRF Token -->
         @csrf
 
+        <!-- Page Title and Icon -->
         <h2><x-modularavel::icon name="person-fill-lock" /> {{ $title }}</h2>
 
         <!-- Session Status -->
@@ -17,10 +20,9 @@
 
         <!-- Email Address -->
         <x-modularavel::input
-            autofocus=""
+            autofocus
             name="email"
             type="email"
-            value="email"
             :label="__('E-mail')"
             icon="envelope-fill"
         />
@@ -34,7 +36,7 @@
             autocomplete="new-password"
         />
 
-        <!-- Remember Me -->
+        <!-- Remember me -->
         <x-modularavel::checkbox
             name="remember"
             class="form-switch"
@@ -43,7 +45,10 @@
             :label="__('Remember-me')"
         />
 
+        <!-- Login Button and Forgot Password Link -->
         <div class="flex items-center justify-end">
+
+            <!-- Forgot Password Link -->
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                    href="{{ route('password.request') }}">
@@ -51,6 +56,7 @@
                 </a>
             @endif
 
+            <!-- Login Button -->
             <x-modularavel::btn
                 type="submit"
                 class="ml-5 shadow"

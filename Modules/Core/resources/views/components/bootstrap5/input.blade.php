@@ -17,7 +17,7 @@
             type="{{ $type }}"
             name="{{ $name }}"
             placeholder="{{ $placeholder }}"
-            value="{{ $value ? old($value) : '' }}"
+            value="{{ old($name, request()->string($name)) }}"
             @required($required)
         />
 

@@ -1,5 +1,6 @@
 {
     "Posts": true,
     "Core": true,
-    "Blog": true
+    "Blog": true,
+    "Auth": true
 }

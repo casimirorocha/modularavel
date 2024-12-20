@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::useScriptTagAttributes([
-            //'up-meta' => 'true', // Unpoly meta
-            // 'defer' => true, // Specify an attribute without a value...
+            'up-meta' => 'false', // Unpoly meta
+            'defer' => true, // Specify an attribute without a value...
         ]);
     }
 }

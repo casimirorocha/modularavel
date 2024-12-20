@@ -7,13 +7,9 @@
 
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net" up-meta="false" />
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" up-meta="false" />
-
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://daddybrasilapp.test/favicon-16x16.png" up-meta="false">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://daddybrasilapp.test/favicon-32x32.png" up-meta="false">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}" up-meta="false">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" up-meta="false">
 
     <!-- Default scripts -->
     @vite([
@@ -27,8 +23,8 @@
 </head>
 <body class="font-sans text-gray-900 antialiased min-h-screen flex flex-col items-center gap-4 justify-center">
     <div>
-        <a href="/">
-            <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+        <a href="{{ route('login') }}" up-cache="true" up-preload="true">
+            <x-application-logo class="h-16 w-16 shadow fill-current text-gray-500 rounded-full" />
         </a>
     </div>
 
