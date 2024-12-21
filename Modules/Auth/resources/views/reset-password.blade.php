@@ -49,10 +49,8 @@
          <!-- Submit Button -->
         <div>
             <x-modularavel::btn
-                type="submit"
                 :label="__('Reset Password')"
                 icon-right="check-circle"
-                size="lg"
                 class="w-full"
             />
         </div>

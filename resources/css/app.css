@@ -1,13 +1,15 @@
 @import "unpoly/unpoly.min.css";
 @import "bootstrap-icons/font/bootstrap-icons.min.css";
-/*@tailwind base;*/
-@tailwind components;
+/*@tailwind base;
+@tailwind components;*/
 @tailwind utilities;
+/*
 
-body {
-    /*@apply bg-gray-800;*/
+body,html {
+	@apply bg-gradient-to-br from-zinc-900/40 to-zinc-950
 }
 
 up-popup, up-cover-box, up-drawer-box, up-modal-box {
     @apply bg-gray-800/95 text-white rounded-lg shadow-2xl
 }
+*/

@@ -11,7 +11,7 @@
               'w-100' => $fullWidth
         ])->merge([
               'type' => $type,
-              'class' => 'btn btn-primary gap-2 justify-content-center'
+              'class' => 'btn btn-primary gap-2 justify-content-center shadow'
         ]) }}>
 
         <x-modularavel::icon name="{{ $icon ?? $iconRight }}" />

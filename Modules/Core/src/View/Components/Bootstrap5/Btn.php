@@ -11,10 +11,10 @@ class Btn extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public ?string $type = 'button',
+        public ?string $type = 'submit',
         public ?string $label = 'Submit',
         public ?string $color = 'primary',
-        public ?string $size = 'md',
+        public ?string $size = 'lg',
         public ?string $icon = null,
         public ?string $iconRight = null,
         public ?bool $fullWidth = false,

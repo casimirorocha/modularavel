@@ -1,41 +1,27 @@
 <x-guest-layout>
-        <section id="forgot-password">
-            <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-            </div>
+	<!-- Forgot Password Form -->
+	<x-modularavel::form
+		:title="trans('auth::module.page.forgot_password.title')"
+		:description="trans('auth::module.page.forgot_password.description')"
+		action="{{ route('password.email') }}"
+		icon="question-circle"
+		class="w-full max-w-md"
+	>
 
-            <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+		<!-- Email Address -->
+		<x-modularavel::input
+			autofocus
+			name="email"
+			type="email"
+			:label="trans('auth::module.page.forgot_password.form.email')"
+			icon="envelope-fill"
+		/>
 
-            <form method="POST"
-                  action="{{ route('password.email') }}"
-                  up-disable
-                  up-fail-target="form"
-                  up-scroll="form"
-                  up-fail-scroll="form"
-                  up-target="#forgot-password"
-            >
-                @csrf
-
-                <!-- Email Address -->
-                <x-modularavel::input
-                    autofocus=""
-                    name="email"
-                    type="email"
-                    value="email"
-                    :label="__('E-mail')"
-                    icon="envelope-fill"
-                />
-
-                <div class="flex items-center justify-end mt-4">
-                    <x-modularavel::btn
-                        type="submit"
-                        class="ml-5 shadow"
-                        :label="__('Email Password Reset Link')"
-                        icon-right="box-arrow-in-right"
-                        size="md"
-                    />
-                </div>
-            </form>
-        </section>
+		<!-- Submit Button -->
+		<x-modularavel::btn
+			full-width
+			:label="trans('auth::module.page.forgot_password.actions.submit')"
+			icon-right="arrow-right-circle"
+		/>
+	</x-modularavel::form>
 </x-guest-layout>

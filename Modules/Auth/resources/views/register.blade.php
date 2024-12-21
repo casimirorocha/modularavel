@@ -1,74 +1,72 @@
 <x-guest-layout>
 
     <!-- Register Form -->
-    <form class="grid grid-cols-1 gap-4"
-          method="POST"
-          action="{{ route('register') }}"
-          up-disable
-          up-fail-target="form"
-          up-scroll="auto"
-          up-fail-scroll="form"
-          up-target="form"
-    >
-            @csrf
+	<x-modularavel::form :title="trans('auth::module.page.register.title')"
+								:description="trans('auth::module.page.register.description')"
+								:action="route('register')"
+								icon="person-plus-fill"
+								class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3"
+	>
 
-            <!-- Logo and icon -->
-            <h2><x-modularavel::icon name="person-add" /> {{ __('Register') }}</h2>
 
-            <!-- Session Status -->
-            <x-auth-session-status :status="session('status')"/>
+		<!-- Name -->
+		<x-modularavel::input
+			autofocus
+			name="name"
+			type="text"
+			:label="trans('auth::module.page.register.form.name')"
+			icon="person"
+		/>
 
-            <!-- Name -->
-            <x-modularavel::input
-                autofocus=""
-                name="name"
-                type="text"
-                :label="__('Name')"
-                icon="person"
-            />
+		<!-- Username -->
+		<x-modularavel::input
+			name="username"
+			type="text"
+			:label="trans('auth::module.page.register.form.username')"
+			icon="threads"
+		/>
 
-            <!-- Email Address -->
-            <x-modularavel::input
-                autofocus=""
-                name="email"
-                type="email"
-                :label="__('E-mail')"
-                icon="envelope-fill"
-            />
+		<!-- Email Address -->
+		<x-modularavel::input
+			name="email"
+			type="email"
+			:label="trans('auth::module.page.register.form.email')"
+			icon="envelope-fill"
+		/>
 
-            <!-- Password -->
-            <x-modularavel::input
-                name="password"
-                type="password"
-                :label="__('Password')"
-                icon="lock-fill"
-                autocomplete="new-password"
-            />
+		<!-- Password -->
+		<x-modularavel::input
+			name="password"
+			type="password"
+			:label="trans('auth::module.page.register.form.password')"
+			icon="lock-fill"
+			autocomplete="new-password"
+		/>
 
-            <!-- Password confirmation -->
-            <x-modularavel::input
-                name="password_confirmation"
-                type="password"
-                :label="__('Confirm Password')"
-                icon="lock-fill"
-                autocomplete="new-password"
-            />
+		<div>
+			<!-- Password confirmation -->
+			<x-modularavel::input
+				name="password_confirmation"
+				type="password"
+				:label="trans('auth::module.page.register.form.password_confirmation')"
+				icon="lock-fill"
+				autocomplete="new-password"
+			/>
+		</div>
 
-            <!-- Submit Button and link to login page -->
-            <div class="flex items-center justify-end mt-4">
-                <!-- Already registered? go to login -->
-                <a up-follow up-href="{{ route('login') }}" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                    {{ __('Already registered?') }}
-                </a>
+		<div class="col-span-full">
+			<!-- Submit Button and link to login page -->
+			<div class="flex items-center justify-end mt-4">
+				<!-- Already registered? go to login -->
+				<x-auth::action-link :href="route('login')" :label="trans('auth::module.page.register.actions.already_registered')"/>
 
-                <!-- Register Button -->
-                <x-modularavel::btn
-                    type="submit"
-                    class="ml-5 shadow"
-                    :label="__('Register')"
-                    icon-right="box-arrow-in-right"
-                    size="lg"
-                />
-            </div>
-        </form>
+				<!-- Register Button -->
+				<x-modularavel::btn
+					class="ml-5"
+					:label="trans('auth::module.page.register.actions.submit')"
+					icon-right="box-arrow-in-right"
+				/>
+			</div>
+		</div>
+	</x-modularavel::form>
 </x-guest-layout>

@@ -1,69 +1,64 @@
 <x-guest-layout>
-    <!-- Login Form -->
-    <form class="grid grid-cols-1 gap-4"
-          method="POST"
-          action="{{ route('login') }}"
-          up-disable
-          up-fail-target="form"
-          up-scroll="auto"
-          up-fail-scroll="form"
-          up-target="form"
-    >
-        <!-- CSRF Token -->
-        @csrf
+		<!-- Login Form -->
+		<x-modularavel::form action="{{ route('login') }}"
+									:title="trans('auth::module.page.login.title')"
+									class="w-[400px] max-w-full"
+									icon="lock"
+		>
 
-        <!-- Page Title and Icon -->
-        <h2><x-modularavel::icon name="person-fill-lock" /> {{ $title }}</h2>
+			<!-- Forgot Password Link -->
+			@if (Route::has('password.request'))
+				<x-modularavel::nav.link :href="route('register')" :label="trans('auth::module.page.login.actions.register')"/>
+			@endif
+			<!-- End Forgot Password Link -->
 
-        <!-- Session Status -->
-        <x-auth-session-status :status="session('status')"/>
+			<!-- Email Address -->
+			<x-modularavel::input
+				autofocus
+				name="email"
+				type="email"
+				:label="trans('auth::module.page.login.form.email')"
+				icon="envelope-fill"
+			/>
+			<!-- End Email Address -->
 
-        <!-- Email Address -->
-        <x-modularavel::input
-            autofocus
-            name="email"
-            type="email"
-            :label="__('E-mail')"
-            icon="envelope-fill"
-        />
+			<!-- Password -->
+			<x-modularavel::input
+				name="password"
+				type="password"
+				:label="trans('auth::module.page.login.form.password')"
+				icon="lock-fill"
+				autocomplete="new-password"
+			/>
+			<!-- End Password -->
 
-        <!-- Password -->
-        <x-modularavel::input
-            name="password"
-            type="password"
-            :label="__('Password')"
-            icon="lock-fill"
-            autocomplete="new-password"
-        />
+			<!-- Remember me -->
+			<x-modularavel::checkbox
+				name="remember"
+				class="form-switch"
+				role="switch"
+				value="remember"
+				:label="trans('auth::module.page.login.form.remember_me')"
+			/>
+			<!-- End Remember me -->
 
-        <!-- Remember me -->
-        <x-modularavel::checkbox
-            name="remember"
-            class="form-switch"
-            role="switch"
-            value="remember"
-            :label="__('Remember-me')"
-        />
+			<!-- Login Button and Forgot Password Link -->
+			<div class="flex items-center justify-end">
+				<!-- Forgot Password Link -->
+				@if (Route::has('password.request'))
+					<x-modularavel::action-link :label="trans('auth::module.page.login.actions.forgot_password')"/>
+				@endif
+				<!-- End Forgot Password Link -->
 
-        <!-- Login Button and Forgot Password Link -->
-        <div class="flex items-center justify-end">
-
-            <!-- Forgot Password Link -->
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                   href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <!-- Login Button -->
-            <x-modularavel::btn
-                type="submit"
-                class="ml-5 shadow"
-                :label="__('Login')"
-                icon-right="box-arrow-in-right"
-                size="lg"
-            />
-        </div>
-    </form>
+				<!-- Login Submit Button -->
+				<x-modularavel::btn
+					class="ml-5"
+					:label="trans('auth::module.page.login.actions.submit')"
+					icon-right="box-arrow-in-right"
+				/>
+				<!-- End Login Submit Button -->
+			</div>
+			<!-- End Login Button and Forgot Password Link -->
+		</x-modularavel::form>
+		<!-- End Login Form -->
 </x-guest-layout>

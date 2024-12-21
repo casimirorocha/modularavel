@@ -13,9 +13,9 @@ import { toArray } from './utils/toArray';
 document.addEventListener("DOMContentLoaded", () => {
     const env = import.meta.env
 
-     _hyperscript.browserInit();
+    // _hyperscript.browserInit();
 
-    up.fragment.config.mainTargets.push(['main', 'body', 'head', 'header'])
+    up.fragment.config.mainTargets.push(['main'])
 
     up.on('click', function(event) {
         const target = event.target
@@ -79,11 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
      *
      * https://unpoly.com/network-issues#disconnects
      */
- /*   up.on('up:fragment:inserted', function(event) {
+		up.on('up:fragment:inserted', function(event) {
         setTimeout(() => {
             _hyperscript.browserInit();
-        }, 50)
-    })*/
+        }, 800)
+    })
 
 
     /**
