@@ -21,15 +21,15 @@
 	<!-- Push assets here -->
 	@stack('styles')
 </head>
-<body class="font-sans text-gray-900 antialiased min-h-screen flex flex-col items-center gap-4 justify-center">
-<div>
+<body class="font-sans text-gray-900 antialiased min-h-screen flex flex-col items-center gap-3 justify-center">
+{{--<div>
 	<a href="{{ route('login') }}" up-cache="true" up-preload="true">
-		<x-application-logo class="h-16 w-16 shadow fill-current text-gray-500 rounded-full" />
+		<x-application-logo class="h-12 w-12 shadow fill-current text-gray-500 rounded-full" />
 	</a>
-</div>
+</div>--}}
 
-<div class="w-full max-w-fit">
-	<div class="card bg-body-secondary mx-3 px-0 py-2 shadow">
+<div class="min-w-[40px] max-w-full p-4">
+	<div class="card bg-body-secondary shadow">
 		<div class="card-body">
 			<main>
 				@stack('assets')

@@ -23,5 +23,8 @@
 			:label="trans('auth::module.page.forgot_password.actions.submit')"
 			icon-right="arrow-right-circle"
 		/>
+
+		<!-- Go Back Button -->
+		<x-modularavel::btn class="btn btn-sm btn-link bg-transparent text-decoration-none" icon="arrow-left" :label="trans('auth::module.actions.go_back')" />
 	</x-modularavel::form>
 </x-guest-layout>

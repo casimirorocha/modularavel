@@ -7,8 +7,10 @@
 		>
 
 			<!-- Forgot Password Link -->
-			@if (Route::has('password.request'))
-				<x-modularavel::nav.link :href="route('register')" :label="trans('auth::module.page.login.actions.register')"/>
+			@if (Route::has('register'))
+				<x-modularavel::action-link :href="route('register')" class="text-decoration-none fs-6 text-info">
+					<x-modularavel::icon name="person-plus-fill" class="mr-2" /> {{ trans('auth::module.page.login.actions.register') }}
+				</x-modularavel::action-link>
 			@endif
 			<!-- End Forgot Password Link -->
 
@@ -37,7 +39,6 @@
 				name="remember"
 				class="form-switch"
 				role="switch"
-				value="remember"
 				:label="trans('auth::module.page.login.form.remember_me')"
 			/>
 			<!-- End Remember me -->
@@ -46,13 +47,14 @@
 			<div class="flex items-center justify-end">
 				<!-- Forgot Password Link -->
 				@if (Route::has('password.request'))
-					<x-modularavel::action-link :label="trans('auth::module.page.login.actions.forgot_password')"/>
+					<x-modularavel::action-link :href="route('password.request')" :label="trans('auth::module.page.login.actions.forgot_password')"/>
 				@endif
 				<!-- End Forgot Password Link -->
 
 				<!-- Login Submit Button -->
 				<x-modularavel::btn
 					class="ml-5"
+					size="md"
 					:label="trans('auth::module.page.login.actions.submit')"
 					icon-right="box-arrow-in-right"
 				/>

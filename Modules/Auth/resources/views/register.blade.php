@@ -1,11 +1,11 @@
 <x-guest-layout>
-
     <!-- Register Form -->
-	<x-modularavel::form :title="trans('auth::module.page.register.title')"
-								:description="trans('auth::module.page.register.description')"
-								:action="route('register')"
-								icon="person-plus-fill"
-								class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3"
+	<x-modularavel::form
+		:title="trans('auth::module.page.register.title')"
+		:description="trans('auth::module.page.register.description')"
+		:action="route('register')"
+		icon="person-plus-fill"
+		class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3"
 	>
 
 

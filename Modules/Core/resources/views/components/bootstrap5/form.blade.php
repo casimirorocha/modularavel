@@ -23,7 +23,7 @@
 
 		<div class="col-span-full">
 			<!-- Page Title & Icon -->
-			<h2 @class([
+			<h5 @class([
 			'my-0 py-0',
 			'flex items-center gap-2' => $icon && !$iconRight,
 			'flex flex-row-reverse items-center justify-self-start gap-2' => $iconRight && !$icon,
@@ -32,14 +32,15 @@
 				@if(isset($icon) || isset($iconRight))
 					<x-modularavel::icon name="{{ $icon ?? $iconRight }}"/>
 				@endif	{{ $title }}
-			</h2>
+			</h5>
 
+			<!-- Form Description -->
 			@isset($description)
-				<!-- Form Description -->
 				<div class="text-sm text-gray-600 dark:text-gray-400 mt-3">
 					{{ $description ?? '' }}
 				</div>
 			@endisset
+			<!-- End Form Description -->
 		</div>
 
 		<!-- Session Status -->
