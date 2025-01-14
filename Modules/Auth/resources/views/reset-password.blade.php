@@ -1,5 +1,5 @@
 <x-guest-layout>
-	<!-- Form to reset password -->
+	<!-- Reset Password Form -->
 	<x-modularavel::form
 		:action="route('password.store')"
 		:title="trans('auth::module.page.reset_password.title')"

@@ -1,27 +1,37 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
-    </div>
+	<!-- Confirm Password Form -->
+	<x-modularavel::form
+		:action="route('password.confirm')"
+		:title="trans('auth::module.page.confirm_password.title')"
+		:description="trans('auth::module.page.confirm_password.description')"
+		icon="lock-fill"
+		autocomplete="off"
+		method="POST"
+	>
+		<!-- Current Password -->
+		<x-modularavel::input
+			autofocus
+			name="password"
+			type="password"
+			:label="trans('auth::module.page.confirm_password.form_fields.password')"
+			icon="key-fill"
+			autocomplete="new-password"
+		/>
 
-    <form method="POST" action="{{ route('password.confirm') }}">
-        @csrf
+		<!-- Submit Button -->
+		<x-modularavel::btn
+			full-width
+			:label="trans('auth::module.page.confirm_password.form_fields.submit')"
+			icon-right="unlock-fill"
+		/>
 
-        <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
-    </form>
+		<div class="flex justify-center items-center">
+			<!-- Go Back Button -->
+			<x-modularavel::action-link
+				onclick="window.history.back()"
+			>
+				<x-modularavel::icon name="arrow-left" />	{{ trans('auth::module.actions.go_back') }}
+			</x-modularavel::action-link>
+		</div>
+	</x-modularavel::form>
 </x-guest-layout>

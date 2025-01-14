@@ -15,7 +15,7 @@ return [
         'register' => [
             'title' => 'Register',
             'description' => 'Register to your account.',
-			  'already_registered' => 'Already registered? Login here.',
+            'already_registered' => 'Already registered? Login here.',
             'form_fields' => [
                 'name' => 'Name',
                 'username' => 'Username',
@@ -47,6 +47,22 @@ return [
                 'submit' => 'Reset Password',
             ],
         ],
+        'confirm_password' => [
+            'title' => 'Confirm Password',
+            'description' => 'Please confirm your password before continuing.',
+            'form_fields' => [
+                'password' => 'Current Password',
+                'submit' => 'Unlock',
+            ],
+        ],
+		 'verify_email' => [
+				'title' => 'Verify Email',
+				'description' => 'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.',
+				'form_fields' => [
+					'submit' => 'Verify Email',
+					'logout' => 'Logout'
+				]
+		 ],
         'logout' => [
             'title' => 'Logout',
             'description' => 'You have been logged out.',
