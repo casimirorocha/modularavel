@@ -7,24 +7,29 @@
 		icon="question-circle"
 		class="w-full max-w-md"
 	>
-
 		<!-- Email Address -->
 		<x-modularavel::input
 			autofocus
 			name="email"
 			type="email"
-			:label="trans('auth::module.page.forgot_password.form.email')"
+			:label="trans('auth::module.page.forgot_password.form_fields.email')"
 			icon="envelope-fill"
 		/>
 
 		<!-- Submit Button -->
 		<x-modularavel::btn
 			full-width
-			:label="trans('auth::module.page.forgot_password.actions.submit')"
+			:label="trans('auth::module.page.forgot_password.form_fields.submit')"
 			icon-right="arrow-right-circle"
 		/>
 
-		<!-- Go Back Button -->
-		<x-modularavel::btn class="btn btn-sm btn-link bg-transparent text-decoration-none" icon="arrow-left" :label="trans('auth::module.actions.go_back')" />
+		<div class="flex justify-center items-center">
+			<!-- Go Back Button -->
+			<x-modularavel::action-link
+				onclick="window.history.back()"
+			>
+				<x-modularavel::icon name="arrow-left" />	{{ trans('auth::module.actions.go_back') }}
+			</x-modularavel::action-link>
+		</div>
 	</x-modularavel::form>
 </x-guest-layout>

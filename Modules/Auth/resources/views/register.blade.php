@@ -7,14 +7,12 @@
 		icon="person-plus-fill"
 		class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3"
 	>
-
-
 		<!-- Name -->
 		<x-modularavel::input
 			autofocus
 			name="name"
 			type="text"
-			:label="trans('auth::module.page.register.form.name')"
+			:label="trans('auth::module.page.register.form_fields.name')"
 			icon="person"
 		/>
 
@@ -22,7 +20,7 @@
 		<x-modularavel::input
 			name="username"
 			type="text"
-			:label="trans('auth::module.page.register.form.username')"
+			:label="trans('auth::module.page.register.form_fields.username')"
 			icon="threads"
 		/>
 
@@ -30,7 +28,7 @@
 		<x-modularavel::input
 			name="email"
 			type="email"
-			:label="trans('auth::module.page.register.form.email')"
+			:label="trans('auth::module.page.register.form_fields.email')"
 			icon="envelope-fill"
 		/>
 
@@ -38,7 +36,7 @@
 		<x-modularavel::input
 			name="password"
 			type="password"
-			:label="trans('auth::module.page.register.form.password')"
+			:label="trans('auth::module.page.register.form_fields.password')"
 			icon="lock-fill"
 			autocomplete="new-password"
 		/>
@@ -48,7 +46,7 @@
 			<x-modularavel::input
 				name="password_confirmation"
 				type="password"
-				:label="trans('auth::module.page.register.form.password_confirmation')"
+				:label="trans('auth::module.page.register.form_fields.password_confirmation')"
 				icon="lock-fill"
 				autocomplete="new-password"
 			/>
@@ -58,12 +56,12 @@
 			<!-- Submit Button and link to login page -->
 			<div class="flex items-center justify-end mt-4">
 				<!-- Already registered? go to login -->
-				<x-auth::action-link :href="route('login')" :label="trans('auth::module.page.register.actions.already_registered')"/>
+				<x-auth::action-link :href="route('login')" :label="trans('auth::module.page.register.already_registered')"/>
 
 				<!-- Register Button -->
 				<x-modularavel::btn
 					class="ml-5"
-					:label="trans('auth::module.page.register.actions.submit')"
+					:label="trans('auth::module.page.register.form_fields.submit')"
 					icon-right="box-arrow-in-right"
 				/>
 			</div>

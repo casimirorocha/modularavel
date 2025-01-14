@@ -21,6 +21,7 @@ class Input extends Component
         public ?bool $disabled = false,
         public ?bool $readonly = false,
         public ?bool $multiple = false,
+        public mixed $append = null,
     ) {}
 
     /**
@@ -28,8 +29,6 @@ class Input extends Component
      */
     public function render(): View|string
     {
-        return view('core::components.bootstrap5.input', [
-            'id' => $this->name,
-        ]);
+        return view('core::components.bootstrap5.input');
     }
 }

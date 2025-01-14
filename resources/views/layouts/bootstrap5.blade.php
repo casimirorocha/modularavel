@@ -28,7 +28,7 @@
 	</a>
 </div>--}}
 
-<div class="min-w-[40px] max-w-full p-4">
+<div class="min-w-[450px] max-w-full p-4">
 	<div class="card bg-body-secondary shadow">
 		<div class="card-body">
 			<main>

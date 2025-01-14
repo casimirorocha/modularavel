@@ -1,58 +1,56 @@
 <x-guest-layout>
-    <!-- Form to reset password -->
-    <form
-        method="POST"
-        action="{{ route('password.store') }}"
-        class="grid grid-cols-1 gap-4"
-        up-disable
-        up-fail-target="form"
-        up-scroll="auto"
-        up-fail-scroll="form"
-        up-target="form"
-    >
-        <!-- CSRF Token -->
-        @csrf
+	<!-- Form to reset password -->
+	<x-modularavel::form
+		:action="route('password.store')"
+		:title="trans('auth::module.page.reset_password.title')"
+		icon="arrow-repeat"
+		method="POST"
+	>
+		<!-- Password Reset Token -->
+		<input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-        <!-- Title of the page -->
-        <h2><x-modularavel::icon name="person-fill-lock" /> {{ __('Reset Password') }}</h2>
+		<!-- Email Address -->
+		<x-modularavel::input
+			readonly
+			name="email"
+			type="email"
+			:label="trans('auth::module.page.reset_password.form_fields.email')"
+			icon="envelope-fill"
+		/>
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+		<!-- New Password -->
+		<x-modularavel::input
+			autofocus
+			name="password"
+			type="password"
+			:label="trans('auth::module.page.reset_password.form_fields.password')"
+			icon="key-fill"
+			autocomplete="new-password"
+		/>
 
-        <!-- Email Address -->
-        <x-modularavel::input
-            autofocus
-            name="email"
-            type="email"
-            label="{{ __('Email Address') }}"
-            icon="envelope-fill"
-        />
+		<!-- New Password Confirmation -->
+		<x-modularavel::input
+			name="password_confirmation"
+			type="password"
+			:label="trans('auth::module.page.reset_password.form_fields.password_confirmation')"
+			icon="key-fill"
+			autocomplete="new-password"
+		/>
 
-        <!-- New Password -->
-        <x-modularavel::input
-            name="password"
-            type="password"
-            :label="__('New Password')"
-            icon="lock-fill"
-            autocomplete="new-password"
-        />
+		<!-- Submit Button -->
+		<x-modularavel::btn
+			full-width
+			:label="trans('auth::module.page.reset_password.form_fields.submit')"
+			icon-right="check-circle"
+		/>
 
-        <!-- New Password Confirmation -->
-        <x-modularavel::input
-            name="password_confirmation"
-            type="password"
-            :label="__('Password Confirmation')"
-            icon="lock-fill"
-            autocomplete="new-password"
-        />
-
-         <!-- Submit Button -->
-        <div>
-            <x-modularavel::btn
-                :label="__('Reset Password')"
-                icon-right="check-circle"
-                class="w-full"
-            />
-        </div>
-    </form>
+		<div class="flex justify-center items-center">
+			<!-- Go Back Button -->
+			<x-modularavel::action-link
+				href="{{ route('login') }}"
+			>
+				<x-modularavel::icon name="arrow-left" />	{{ trans('auth::module.actions.go_back') }}
+			</x-modularavel::action-link>
+		</div>
+	</x-modularavel::form>
 </x-guest-layout>

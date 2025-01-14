@@ -1,5 +1,5 @@
 import 'unpoly/unpoly.min.js'
-//import 'unpoly/unpoly-bootstrap5.min.js'
+import 'unpoly/unpoly-bootstrap5.min.js'
 import _hyperscript from 'hyperscript.org';
 import { toArray } from './utils/toArray';
 
@@ -13,7 +13,7 @@ import { toArray } from './utils/toArray';
 document.addEventListener("DOMContentLoaded", () => {
     const env = import.meta.env
 
-    // _hyperscript.browserInit();
+    _hyperscript.browserInit();
 
     up.fragment.config.mainTargets.push(['main'])
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
      *
      * https://unpoly.com/network-issues#disconnects
      */
-		up.on('up:fragment:inserted', function(event) {
+		up.on('up:fragment:inserted', function() {
         setTimeout(() => {
             _hyperscript.browserInit();
         }, 800)

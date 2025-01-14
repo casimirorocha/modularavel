@@ -1,66 +1,73 @@
 <x-guest-layout>
 		<!-- Login Form -->
-		<x-modularavel::form action="{{ route('login') }}"
-									:title="trans('auth::module.page.login.title')"
-									class="w-[400px] max-w-full"
-									icon="lock"
+		<x-modularavel::form
+			action="{{ route('login') }}"
+			:title="trans('auth::module.page.login.title')"
+			class="w-[400px] max-w-full"
+			icon="lock-fill"
 		>
-
 			<!-- Forgot Password Link -->
 			@if (Route::has('register'))
 				<x-modularavel::action-link :href="route('register')" class="text-decoration-none fs-6 text-info">
-					<x-modularavel::icon name="person-plus-fill" class="mr-2" /> {{ trans('auth::module.page.login.actions.register') }}
+					<x-modularavel::icon name="person-plus-fill" class="mr-2" /> {{ trans('auth::module.page.register.description') }}
 				</x-modularavel::action-link>
 			@endif
-			<!-- End Forgot Password Link -->
 
 			<!-- Email Address -->
 			<x-modularavel::input
 				autofocus
 				name="email"
 				type="email"
-				:label="trans('auth::module.page.login.form.email')"
+				:label="trans('auth::module.page.login.form_fields.email')"
 				icon="envelope-fill"
 			/>
-			<!-- End Email Address -->
 
 			<!-- Password -->
 			<x-modularavel::input
 				name="password"
+				id="passwordX"
 				type="password"
-				:label="trans('auth::module.page.login.form.password')"
-				icon="lock-fill"
+				:label="trans('auth::module.page.login.form_fields.password')"
+				icon="key-fill"
 				autocomplete="new-password"
-			/>
-			<!-- End Password -->
+			>
+				<x-slot name="append"
+						  class="cursor-pointer"
+						  _="
+							  on click if #passwordX.type === 'password'
+							  then set #passwordX.type to 'text'
+							  else if #passwordX.type === 'text'
+							  then set #passwordX.type to 'password' end
+							  on click toggle .bi-eye-slash-fill .bi-eye-fill on .icon
+						 "
+				>
+					<x-modularavel::icon name="eye-slash-fill" class="icon" />
+				</x-slot>
+			</x-modularavel::input>
 
 			<!-- Remember me -->
 			<x-modularavel::checkbox
 				name="remember"
 				class="form-switch"
 				role="switch"
-				:label="trans('auth::module.page.login.form.remember_me')"
+				:label="trans('auth::module.page.login.form_fields.remember_me')"
+				checked="{{ old('remember') ? 'checked' : '' }}"
 			/>
-			<!-- End Remember me -->
 
 			<!-- Login Button and Forgot Password Link -->
 			<div class="flex items-center justify-end">
 				<!-- Forgot Password Link -->
 				@if (Route::has('password.request'))
-					<x-modularavel::action-link :href="route('password.request')" :label="trans('auth::module.page.login.actions.forgot_password')"/>
+					<x-modularavel::action-link :href="route('password.request')" :label="trans('auth::module.page.forgot_password.title')"/>
 				@endif
-				<!-- End Forgot Password Link -->
 
 				<!-- Login Submit Button -->
 				<x-modularavel::btn
 					class="ml-5"
 					size="md"
-					:label="trans('auth::module.page.login.actions.submit')"
-					icon-right="box-arrow-in-right"
+					:label="trans('auth::module.page.login.form_fields.submit')"
+					icon-right="unlock-fill"
 				/>
-				<!-- End Login Submit Button -->
 			</div>
-			<!-- End Login Button and Forgot Password Link -->
 		</x-modularavel::form>
-		<!-- End Login Form -->
 </x-guest-layout>
