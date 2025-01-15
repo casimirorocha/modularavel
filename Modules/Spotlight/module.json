@@ -1,0 +1,11 @@
+{
+    "name": "Spotlight",
+    "alias": "spotlight",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Spotlight\\Providers\\SpotlightServiceProvider"
+    ],
+    "files": []
+}

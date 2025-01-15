@@ -1,0 +1,32 @@
+{
+    "name": "casimirorocha/spotlight",
+    "description": "",
+    "authors": [
+        {
+            "name": "Casimiro Rocha",
+            "email": "casimiroaf@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+					"Modules\\Spotlight\\Providers\\SpotlightServiceProvider"
+				],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Spotlight\\": "src/",
+            "Modules\\Spotlight\\Database\\Factories\\": "database/factories/",
+            "Modules\\Spotlight\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Spotlight\\Tests\\": "tests/"
+        }
+    }
+}
