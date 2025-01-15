@@ -12,7 +12,7 @@
 			autofocus
 			name="name"
 			type="text"
-			:label="trans('auth::module.page.register.form_fields.name')"
+			:label="trans('auth::module.page.register.form.name')"
 			icon="person"
 		/>
 
@@ -20,7 +20,7 @@
 		<x-modularavel::input
 			name="username"
 			type="text"
-			:label="trans('auth::module.page.register.form_fields.username')"
+			:label="trans('auth::module.page.register.form.username')"
 			icon="threads"
 		/>
 
@@ -28,7 +28,7 @@
 		<x-modularavel::input
 			name="email"
 			type="email"
-			:label="trans('auth::module.page.register.form_fields.email')"
+			:label="trans('auth::module.page.register.form.email')"
 			icon="envelope-fill"
 		/>
 
@@ -36,7 +36,7 @@
 		<x-modularavel::input
 			name="password"
 			type="password"
-			:label="trans('auth::module.page.register.form_fields.password')"
+			:label="trans('auth::module.page.register.form.password')"
 			icon="lock-fill"
 			autocomplete="new-password"
 		/>
@@ -46,7 +46,7 @@
 			<x-modularavel::input
 				name="password_confirmation"
 				type="password"
-				:label="trans('auth::module.page.register.form_fields.password_confirmation')"
+				:label="trans('auth::module.page.register.form.password_confirmation')"
 				icon="lock-fill"
 				autocomplete="new-password"
 			/>
@@ -61,7 +61,7 @@
 				<!-- Register Button -->
 				<x-modularavel::btn
 					class="ml-5"
-					:label="trans('auth::module.page.register.form_fields.submit')"
+					:label="trans('auth::module.page.register.form.submit')"
 					icon-right="box-arrow-in-right"
 				/>
 			</div>

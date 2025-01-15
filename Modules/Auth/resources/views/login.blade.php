@@ -18,7 +18,7 @@
 				autofocus
 				name="email"
 				type="email"
-				:label="trans('auth::module.page.login.form_fields.email')"
+				:label="trans('auth::module.page.login.form.email')"
 				icon="envelope-fill"
 			/>
 
@@ -27,7 +27,7 @@
 				name="password"
 				id="passwordX"
 				type="password"
-				:label="trans('auth::module.page.login.form_fields.password')"
+				:label="trans('auth::module.page.login.form.password')"
 				icon="key-fill"
 				autocomplete="new-password"
 			>
@@ -50,7 +50,7 @@
 				name="remember"
 				class="form-switch"
 				role="switch"
-				:label="trans('auth::module.page.login.form_fields.remember_me')"
+				:label="trans('auth::module.page.login.form.remember_me')"
 				checked="{{ old('remember') ? 'checked' : '' }}"
 			/>
 
@@ -65,7 +65,7 @@
 				<x-modularavel::btn
 					class="ml-5"
 					size="md"
-					:label="trans('auth::module.page.login.form_fields.submit')"
+					:label="trans('auth::module.page.login.form.submit')"
 					icon-right="unlock-fill"
 				/>
 			</div>

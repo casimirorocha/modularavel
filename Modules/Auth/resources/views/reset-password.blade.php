@@ -14,7 +14,7 @@
 			readonly
 			name="email"
 			type="email"
-			:label="trans('auth::module.page.reset_password.form_fields.email')"
+			:label="trans('auth::module.page.reset_password.form.email')"
 			icon="envelope-fill"
 		/>
 
@@ -23,7 +23,7 @@
 			autofocus
 			name="password"
 			type="password"
-			:label="trans('auth::module.page.reset_password.form_fields.password')"
+			:label="trans('auth::module.page.reset_password.form.password')"
 			icon="key-fill"
 			autocomplete="new-password"
 		/>
@@ -32,7 +32,7 @@
 		<x-modularavel::input
 			name="password_confirmation"
 			type="password"
-			:label="trans('auth::module.page.reset_password.form_fields.password_confirmation')"
+			:label="trans('auth::module.page.reset_password.form.password_confirmation')"
 			icon="key-fill"
 			autocomplete="new-password"
 		/>
@@ -40,7 +40,7 @@
 		<!-- Submit Button -->
 		<x-modularavel::btn
 			full-width
-			:label="trans('auth::module.page.reset_password.form_fields.submit')"
+			:label="trans('auth::module.page.reset_password.form.submit')"
 			icon-right="check-circle"
 		/>
 

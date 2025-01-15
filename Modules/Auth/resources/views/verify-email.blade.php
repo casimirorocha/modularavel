@@ -8,7 +8,7 @@
 		icon="check-circle-fill"
 		method="POST"
 	>
-		<x-modularavel::btn type="submit" class="w-full" color="success" :label="trans('auth::module.page.verify_email.form_fields.submit')" icon-right="send" />
+		<x-modularavel::btn type="submit" class="w-full" color="success" :label="trans('auth::module.page.verify_email.form.submit')" icon-right="send" />
 	</x-modularavel::form>
 
     @if (session('status') == 'verification-link-sent')
@@ -20,7 +20,7 @@
     <div class="mt-4 flex items-center justify-between w-full">
         <form method="POST" action="{{ route('logout') }}" class="w-full">
             @csrf
-			  <x-modularavel::btn size="sm" type="submit" color="secondary" class="w-full" :label="trans('auth::module.page.verify_email.form_fields.logout')" />
+			  <x-modularavel::btn size="sm" type="submit" color="secondary" class="w-full" :label="trans('auth::module.page.verify_email.form.logout')" />
         </form>
     </div>
 </x-guest-layout>

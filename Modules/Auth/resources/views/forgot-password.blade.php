@@ -12,14 +12,14 @@
 			autofocus
 			name="email"
 			type="email"
-			:label="trans('auth::module.page.forgot_password.form_fields.email')"
+			:label="trans('auth::module.page.forgot_password.form.email')"
 			icon="envelope-fill"
 		/>
 
 		<!-- Submit Button -->
 		<x-modularavel::btn
 			full-width
-			:label="trans('auth::module.page.forgot_password.form_fields.submit')"
+			:label="trans('auth::module.page.forgot_password.form.submit')"
 			icon-right="arrow-right-circle"
 		/>
 

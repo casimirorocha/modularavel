@@ -5,7 +5,7 @@ return [
         'login' => [
             'title' => 'Login',
             'description' => 'Login to your account.',
-            'form_fields' => [
+            'form' => [
                 'email' => 'Email',
                 'password' => 'Password',
                 'remember_me' => 'Remember me',
@@ -16,7 +16,7 @@ return [
             'title' => 'Register',
             'description' => 'Register to your account.',
             'already_registered' => 'Already registered? Login here.',
-            'form_fields' => [
+            'form' => [
                 'name' => 'Name',
                 'username' => 'Username',
                 'email' => 'Email',
@@ -31,7 +31,7 @@ return [
         'forgot_password' => [
             'title' => 'Forgot Password?',
             'description' => 'No problem! Just let us know your email address. We will send you a password reset link that will allow you to choose a new one.',
-            'form_fields' => [
+            'form' => [
                 'email' => 'Email',
                 'submit' => 'Send Password Reset Link',
             ],
@@ -39,7 +39,7 @@ return [
         'reset_password' => [
             'title' => 'Reset Password',
             'description' => 'Reset your password.',
-            'form_fields' => [
+            'form' => [
                 'token' => 'Reset Password Token',
                 'email' => 'Email',
                 'password' => 'Choose a new password',
@@ -50,7 +50,7 @@ return [
         'confirm_password' => [
             'title' => 'Confirm Password',
             'description' => 'Please confirm your password before continuing.',
-            'form_fields' => [
+            'form' => [
                 'password' => 'Current Password',
                 'submit' => 'Unlock',
             ],
@@ -58,7 +58,7 @@ return [
 		 'verify_email' => [
 				'title' => 'Verify Email',
 				'description' => 'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.',
-				'form_fields' => [
+				'form' => [
 					'submit' => 'Verify Email',
 					'logout' => 'Logout'
 				]
@@ -66,7 +66,7 @@ return [
         'logout' => [
             'title' => 'Logout',
             'description' => 'You have been logged out.',
-            'form_fields' => [
+            'form' => [
                 'submit' => 'Logout',
             ],
         ],
