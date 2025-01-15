@@ -1,0 +1,26 @@
+// Body
+// $body-bg: #F8F9FA;
+$primary: #0076a3;
+$secondary: #e60054;
+$success: #198754;
+$info: #0DCAF0;
+$warning: #FFC107;
+$danger: #E3000E;
+$light: #F8F9FA;
+$dark: #141414;
+
+$theme-colors: (
+	"primary":    $primary,
+	"secondary":  $secondary,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark,
+);
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;

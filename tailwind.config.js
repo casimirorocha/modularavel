@@ -16,6 +16,9 @@ export default {
             colors: {
                 gray: colors.slate,
             },
+			  	screens: {
+					'2xl': '1500px',
+				},
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

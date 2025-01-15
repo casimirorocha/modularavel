@@ -4,9 +4,9 @@ import collectModuleAssetsPaths from './vite-module-loader.cjs';
 
 async function getConfig() {
     const paths = [
-        'resources/sass/bootstrap5.scss',
-        'resources/css/app.css',
-        'resources/js/app.js',
+		 'resources/sass/bootstrap.scss',
+		 'resources/css/app.css',
+		 'resources/js/app.js',
     ];
 
     const allPaths = await collectModuleAssetsPaths(paths, './Modules');
@@ -23,6 +23,7 @@ async function getConfig() {
                     paths: [
                         './app/**',
                         './config/**',
+							  	'./routes/**',
                         './resources/views/**',
                         './Modules/**'
                     ]

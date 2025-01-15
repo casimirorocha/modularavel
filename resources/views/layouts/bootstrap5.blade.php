@@ -7,46 +7,26 @@
 
 	<title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
+	<link rel="dns-prefetch, preconnect" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::asset('resources/images/favicon-16x16.png') }}" up-meta="false">
 	{{--<link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::asset('resources/images/favicon-32x32.png') }}" up-meta="false">--}}
 
 	<!-- Default scripts -->
 	@vite([
-		 'resources/sass/bootstrap5.scss',
-		 'resources/css/app.css',
-		 'resources/js/app.js'
+		'resources/sass/bootstrap.scss',
+      'resources/css/app.css',
+      'resources/js/app.js',
 	])
 
 	<!-- Push assets here -->
 	@stack('styles')
 </head>
-<body class="font-sans text-gray-900 antialiased min-h-screen flex flex-col items-center gap-3 justify-center">
-{{--<div>
-	<a href="{{ route('login') }}" up-cache="true" up-preload="true">
-		<x-application-logo class="h-12 w-12 shadow fill-current text-gray-500 rounded-full" />
-	</a>
-</div>--}}
+<body class="font-sans antialiased min-h-screen">
 
-<div class="min-w-[450px] max-w-full p-4">
-	<div class="card bg-body-secondary shadow">
-		<div class="card-body">
-			<main>
-				@stack('assets')
-
-				@isset($slot)
-					@if($slot->isNotEmpty())
-						{{ $slot }}
-					@else
-						@yield('content')
-					@endif
-				@else
-					@yield('content')
-				@endisset
-			</main>
-		</div>
-	</div>
-</div>
+@yield('content')
 
 <!-- Push scripts here -->
 @stack('scripts')

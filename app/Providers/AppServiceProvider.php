@@ -20,10 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-		 // Vite::prefetch(); // Prefetch all the necessary resources
+        // Vite::prefetch(); // Prefetch all the necessary resources
 
         Vite::useScriptTagAttributes([
-            'up-meta' => 'false', // Unpoly meta
+            'up-meta' => 'true', // Unpoly meta
             'defer' => true, // Specify an attribute without a value...
         ])->prefetch(concurrency: 2);
     }

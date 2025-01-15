@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\Controllers\AuthenticatedSessionController;
 use Modules\Auth\Http\Controllers\ConfirmablePasswordController;
+use Modules\Auth\Http\Controllers\DashboardController;
 use Modules\Auth\Http\Controllers\EmailVerificationNotificationController;
 use Modules\Auth\Http\Controllers\EmailVerificationPromptController;
 use Modules\Auth\Http\Controllers\NewPasswordController;
@@ -49,6 +50,8 @@ Route::middleware('guest')->group(function () {
 
 // Authenticated Middleware
 Route::middleware('auth')->group(function () {
+    // Dashboard Route...
+    /*Route::get('/dashboard', DashboardController::class);*/
 
     // Routes group for middleware throttle:6,1
     Route::middleware(['throttle:6,1'])->group(function () {
