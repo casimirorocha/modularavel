@@ -2,5 +2,6 @@
     "Posts": true,
     "Core": true,
     "Blog": true,
-    "Auth": true
+    "Auth": true,
+    "Spotlight": true
 }

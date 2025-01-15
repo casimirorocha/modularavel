@@ -1,7 +1,7 @@
-<div class="card h-100 w-100 shadow w-100 cursor-pointer">
+<div class="card h-100 w-100 shadow w-100 cursor-pointer overflow-hidden">
 	<a up-href="/profile/Danny" class="text-decoration-none card-title">
-		<div class="overflow-hidden position-relative">
-			<div class="position-absolute bottom-0 end-0 p-1 z-1 text-end">
+		<div class="position-relative overflow-hidden">
+			<div class="position-absolute bottom-0 end-0 p-2 z-1 text-end">
 
 				{{-- Match badge --}}
 				@if($user['match'])
@@ -15,21 +15,18 @@
 
 				{{-- User verified badge --}}
 				@if($user['online'])
-					<div>
-						<span class="badge bg-success text-white">
-							 <i class="fa fa-check me-1"></i>
-							 User verified
-						</span>
+					<div class="badge bg-success text-white text-[.66rem] shadow-sm">
+						<i class="fa fa-check me-1"></i>
+						User verified
 					</div>
 				@endif
 			</div>
 
 			{{-- User profile picture --}}
-			<img src="{{ $user['img'] }}" class="card-img-top scale-effect" alt="Danny" />
+			<img src="{{ $user['img'] }}" class="card-img-top scale-effect object-fit-cover" alt="Danny" />
 		</div>
 
 		<div class="card-body">
-
 			{{-- User name and age --}}
 			<h5 class="card-title fw-bold text-truncate fs-6">
 				{{-- User online status --}}

@@ -1,4 +1,4 @@
-@extends('layouts.bootstrap5')
+@extends('core::layouts.bootstrap5')
 
 @section('content')
 	<header id="header-user" class="sticky-top">
@@ -12,20 +12,21 @@
 					<ul class="nav nav-pills d-none d-md-flex col-12 col-md-auto justify-content-center">
 						<li class="nav-item">
 							<a class="nav-link position-relative active up-current" href="/auth/dashboard" aria-current="page">
-								<i class="fa fa-users"></i> Browse    </a>
+								<i class="fa fa-users"></i> Browse </a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link position-relative " href="/conversations">
-								<i class="fa fa-comments"></i> Messages     </a>
+								<i class="fa fa-comments"></i> Messages </a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link position-relative " href="/visitors">
-								<i class="fa fa-eye"></i> Visitors             <span class="position-absolute top-0 translate-middle badge rounded-pill bg-secondary">11</span>
+								<i class="fa fa-eye"></i> Visitors <span
+									class="position-absolute top-0 translate-middle badge rounded-pill bg-secondary">11</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link position-relative " href="/favorited-me">
-								<i class="fa fa-heart"></i> Favorites     </a>
+								<i class="fa fa-heart"></i> Favorites </a>
 						</li>
 					</ul>
 
@@ -35,49 +36,53 @@
 						</a>
 
 						<div class="dropdown">
-							<a up-follow="false" href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-								<img src="https://laradate.test/img/uploads/W6NC7ijZgzVf14h8bqVzlN1tR0JcwOSWypk6lA54.jpg?p=tiny&s=5674f5ddcf8055153b1921218627968e" alt="Loirinha" width="35" height="35" class="rounded-circle">
+							<a up-follow="false" href="#" class="d-block link-light text-decoration-none dropdown-toggle"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<img
+									src="https://laradate.test/img/uploads/W6NC7ijZgzVf14h8bqVzlN1tR0JcwOSWypk6lA54.jpg?p=tiny&s=5674f5ddcf8055153b1921218627968e"
+									alt="Loirinha" width="35" height="35" class="rounded-circle">
 							</a>
 							<ul class="dropdown-menu text-small shadow">
 								<li>
 									<a class="dropdown-item " href="/profile/Loirinha">
-										<i class="me-2 fa fa-user"></i> View my profile            </a>
+										<i class="me-2 fa fa-user"></i> View my profile </a>
 								</li>
 								<li>
 									<a class="dropdown-item " href="/profile/Loirinha/edit">
-										<i class="me-2 fa fa-edit"></i> Edit my profile            </a>
+										<i class="me-2 fa fa-edit"></i> Edit my profile </a>
 								</li>
 								<li>
 									<a class="dropdown-item " href="/photos">
-										<i class="me-2 fa fa-image"></i> Manage my photos            </a>
+										<i class="me-2 fa fa-image"></i> Manage my photos </a>
 								</li>
 								<li>
 									<a class="dropdown-item " href="/verify">
-										<i class="me-2 fa fa-check"></i> Verify profile            </a>
+										<i class="me-2 fa fa-check"></i> Verify profile </a>
 								</li>
 								<li>
 									<a class="dropdown-item d-flex align-items-center justify-content-between " href="/support">
-										<span><i class="me-2 fa fa-question-circle"></i> Need help?</span>             </a>
+										<span><i class="me-2 fa fa-question-circle"></i> Need help?</span> </a>
 								</li>
 								<li>
 									<a class="dropdown-item " href="/settings">
-										<i class="me-2 fa fa-cogs"></i> Settings            </a>
+										<i class="me-2 fa fa-cogs"></i> Settings </a>
 								</li>
 								<li>
 									<hr class="dropdown-divider">
 								</li>
 								<li>
 									<a class="dropdown-item" href="/admin/dashboard">
-										<i class="me-2 fa fa-bar-chart"></i> Admin panel                </a>
+										<i class="me-2 fa fa-bar-chart"></i> Admin panel </a>
 								</li>
 								<li>
 									<hr class="dropdown-divider">
 								</li>
 								<li>
 									<a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">
-										<i class="me-2 fa fa-sign-out"></i> Logout            </a>
+										<i class="me-2 fa fa-sign-out"></i> Logout </a>
 									<form id="logout-form" action="/logout" method="POST" class="d-none">
-										<input type="hidden" name="_token" value="nmi6scHwXQHZzYqFKW4OsdX9qSCbUeYUS1CFlLJg">            </form>
+										<input type="hidden" name="_token" value="nmi6scHwXQHZzYqFKW4OsdX9qSCbUeYUS1CFlLJg">
+									</form>
 								</li>
 							</ul>
 						</div>
